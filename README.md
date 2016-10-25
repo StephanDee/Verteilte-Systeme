@@ -1,2 +1,2 @@
 # Verteilte-Systeme
-Verteilte Systeme WS 16/17
+Verteilte Systeme WS16/17

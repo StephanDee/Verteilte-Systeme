@@ -1,5 +1,3 @@
-package Uebung1;
-
 import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -18,11 +16,6 @@ public class Main {
     static Thread suchThr2 = null;
 
 
-    /**
-     * Die main
-     *
-     * @param args Befehlszeilen Argument
-     */
     public static void main(String[] args) {
 
         //Abfrage in einer Endlosschleife
@@ -35,12 +28,13 @@ public class Main {
 
             //Wenn x eingegeben wird, wird aus der Schleife gesprungen und das Programm beendet
             if (in.toLowerCase().equals("x")) {
-                System.out.println("Das Programm wird beendet...");
+                System.out.println("Programm wird beendet...");
                 break;
             }
 
             //Entgegennehmen der Eingabe mit toLowerCase
             switch (in.toLowerCase()) {
+
 
                 //Suche nach Name
                 case "name":
@@ -69,7 +63,7 @@ public class Main {
                         //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNu.isEmpty()) {
                             starteNummer(eingabeNu);
-                        } else System.err.println("Es muss etwas eingegeben werden!");
+                        } else System.err.println("Gib eine Nummer ein!");
 
                     } else {
                         System.err.println("Es muss etwas eingegeben werden!");
@@ -86,9 +80,7 @@ public class Main {
                         //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNa.isEmpty()) {
                             starteName(eingabeNa);
-                        } else {
-                            System.err.println("Gib einen Namen ein!");
-                        }
+                        } else System.err.println("Gib einen Namen ein!");
 
                         //Nummer abfragen
                         System.out.print("Gib die Nummer ein: ");
@@ -97,9 +89,8 @@ public class Main {
                         //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNu.isEmpty()) {
                             starteNummer(eingabeNu);
-                        } else {
-                            System.err.println("Gib eine Nummer ein!");
-                        }
+                        } else System.err.println("Es muss etwas eingegeben werden!");
+
 
                     } else {
                         System.err.println("Es muss etwas eingegeben werden!");
@@ -109,6 +100,7 @@ public class Main {
                     System.err.println("Treffe eine Auswahl, was getan werden soll");
                     break;
             }
+
 
             // Auf Threads warten
             try {
@@ -141,11 +133,11 @@ public class Main {
 
     // Namensuche starten
     private static void starteName(String eingabeNa) {
-        if ((eingabeNa.matches("^[a-zA-ZäÄöÖüÜ]+[a-zA-ZäÄöÖüÜ\\s]*"))) {
+        if ((eingabeNa.matches("^[a-zA-ZäöüÄÖÜ]+[a-zA-ZäöüÄÖÜ\\s]*"))) {
             suchThr1 = new Thread(new Suche(eingabeNa, 0, results), "search-name");
             suchThr1.start();
         } else {
-            System.err.println("Es dürfen nur Buchstaben eingegeben werden!");
+            System.err.println("Nur Buchstaben eingeben!");
         }
     }
 
@@ -155,7 +147,8 @@ public class Main {
             suchThr2 = new Thread(new Suche(eingabeNu, 1, results), "search-nummer");
             suchThr2.start();
         } else {
-            System.err.println("Es dürfen nur Zahlen eingegeben werden!");
+            System.err.println("Nur Zahlen eingeben!");
         }
     }
 }
+

@@ -1,5 +1,3 @@
-package Uebung1;
-
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -18,11 +16,11 @@ public class Telefonserver {
 
         server = new CopyOnWriteArrayList<>();
 
-        server.add(new String[]{"Meier", "4711"});
-        server.add(new String[]{"Schmitt", "0815"});
-        server.add(new String[]{"Müller", "4711"});
-        server.add(new String[]{"Meier", "0816"});
-        server.add(new String[]{"von Stockmeier", "1234"});
+        server.add(new String[]{"Dieter", "12345"});
+        server.add(new String[]{"Hansi", "67890"});
+        server.add(new String[]{"von Stockmeier", "030122"});
+        server.add(new String[]{"Müller", "12345"});
+        server.add(new String[]{"Hansi", "030110"});
     }
 
     public String[] getEntry(int column) {

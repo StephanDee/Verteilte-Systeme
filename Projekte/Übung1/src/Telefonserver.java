@@ -3,7 +3,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Telefonserver, der Datensatz bereitstellt
  *
- * @author Stephan DÃ¼nkel
+ * @author Stephan Dünkel
  * @className Telefonserver
  * @date 2016-10-25
  */
@@ -19,7 +19,7 @@ public class Telefonserver {
         server.add(new String[]{"Dieter", "12345"});
         server.add(new String[]{"Hansi", "67890"});
         server.add(new String[]{"von Stockmeier", "030122"});
-        server.add(new String[]{"MÃ¼ller", "12345"});
+        server.add(new String[]{"Müller", "12345"});
         server.add(new String[]{"Hansi", "030110"});
     }
 

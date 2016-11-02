@@ -3,7 +3,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Kann von einem Thread aufgerufen werden und durchsucht eine Liste
  *
- * @author Stephan DÃ¼nkel
+ * @author Stephan DÜnkel
  * @className Suche
  * @date 2016-10-25
  */
@@ -34,8 +34,8 @@ public class Suche implements Runnable {
     }
 
     /**
-     * Iteriert Ã¼ber den Telefonserver und vergleicht die EintrÃ¤ge mit dem definierten Such-String, werden
-     * Ãœbereinstimmungen gefunden so werden diese als String zurÃ¼ckgeliefert
+     * Iteriert über den Telefonserver und vergleicht die Einträge mit dem definierten Such-String, werden
+     * Übereinstimmungen gefunden so werden diese als String zurückgeliefert
      *
      * @return
      */

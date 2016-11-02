@@ -1,17 +1,25 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Startet Programm, nimmt Benutzereingaben entgegen und tÃ¤tigt Ausgaben
+ * Startet Programm, nimmt Benutzereingaben entgegen und tätigt Ausgaben
  *
- * @author Stephan DÃ¼nkel
+ * @author Stephan Dünkel
  * @className Main
  * @date 2016-10-25
  */
 public class Main {
 
     public static CopyOnWriteArrayList<String[]> results = new CopyOnWriteArrayList<String[]>();
-    private static Scanner scn = new Scanner(System.in);
+    // windows-1251
+    // Cp850 - Windows DOS Kommandozeilen-Encodierung
+    // CP437
+    // Cp1252
+    private static Scanner scn = new Scanner(System.in, "Cp850");
+    // private static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     static Thread suchThr1 = null;
     static Thread suchThr2 = null;
 
@@ -42,7 +50,7 @@ public class Main {
                         System.out.print("Gib den Namen ein: ");
                         String eingabeNa = scn.nextLine();
 
-                        //Suche starten mit ÃœberprÃ¼fung, ob Eingabe leer ist
+                        //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNa.isEmpty()) {
                             starteName(eingabeNa);
                         } else {
@@ -60,7 +68,7 @@ public class Main {
                         System.out.print("Gib die Nummer ein: ");
                         String eingabeNu = scn.nextLine();
 
-                        //Suche starten mit ÃœberprÃ¼fung, ob Eingabe leer ist
+                        //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNu.isEmpty()) {
                             starteNummer(eingabeNu);
                         } else System.err.println("Gib eine Nummer ein!");
@@ -77,7 +85,7 @@ public class Main {
                         System.out.print("Gib den Namen ein: ");
                         String eingabeNa = scn.nextLine();
 
-                        //Suche starten mit ÃœberprÃ¼fung, ob Eingabe leer ist
+                        //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNa.isEmpty()) {
                             starteName(eingabeNa);
                         } else System.err.println("Gib einen Namen ein!");
@@ -86,7 +94,7 @@ public class Main {
                         System.out.print("Gib die Nummer ein: ");
                         String eingabeNu = scn.nextLine();
 
-                        //Suche starten mit ÃœberprÃ¼fung, ob Eingabe leer ist
+                        //Suche starten mit Überprüfung, ob Eingabe leer ist
                         if (!eingabeNu.isEmpty()) {
                             starteNummer(eingabeNu);
                         } else System.err.println("Es muss etwas eingegeben werden!");
@@ -133,7 +141,7 @@ public class Main {
 
     // Namensuche starten
     private static void starteName(String eingabeNa) {
-        if ((eingabeNa.matches("^[a-zA-ZÃ¤Ã¶Ã¼Ã„Ã–Ãœ]+[a-zA-ZÃ¤Ã¶Ã¼Ã„Ã–Ãœ\\s]*"))) {
+        if ((eingabeNa.matches("^[a-zA-ZäüöÄÖÜ]+[a-zA-ZäöüÄÖÜ\\s]*"))) {
             suchThr1 = new Thread(new Suche(eingabeNa, 0, results), "search-name");
             suchThr1.start();
         } else {

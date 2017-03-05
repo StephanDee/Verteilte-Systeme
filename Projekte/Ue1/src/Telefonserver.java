@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Diese Klasse implementiert den Telefonserver.
  * Es realisiert eine nebenlaeufige Suchfunktion.
  *
- * @author Stephan Dünkel
+ * @author Stephan DÃ¼nkel
  * @fileName Telefonserver.java
  * @date 09-11-2016
  */
@@ -24,12 +24,12 @@ public class Telefonserver {
     // Die Threads tragen Ergebnisse in den StringBuffer ein
     private final StringBuffer suchBuffer = new StringBuffer();
 
-    // 2 String-Listen für das Telefonverzeichnis
+    // 2 String-Listen fÃ¼r das Telefonverzeichnis
     public final List<String> names;
     public final List<String> numbers;
 
     /**
-     * Instanziiert 2 Arraylisten für Namen und Nummern.
+     * Instanziiert 2 Arraylisten fÃ¼r Namen und Nummern.
      */
     public Telefonserver() {
         names = new ArrayList<>();
@@ -82,7 +82,7 @@ public class Telefonserver {
     }
 
     /**
-     * Startet Programm, nimmt Benutzereingaben entgegen und tätigt Ausgaben
+     * Startet Programm, nimmt Benutzereingaben entgegen und tÃ¤tigt Ausgaben
      *
      * @param args Befehlszeilen Argument
      * @throws InterruptedException
@@ -97,7 +97,7 @@ public class Telefonserver {
         // erzeugt Telefonserver Testdaten
         server.addLine("Meier", "4711");
         server.addLine("Schmitt", "0815");
-        server.addLine("Müller", "4711");
+        server.addLine("MÃ¼ller", "4711");
         server.addLine("Meier", "0816");
         server.addLine("von Schulze", "1234");
 
@@ -124,7 +124,7 @@ public class Telefonserver {
                         System.out.print("Gib einen Namen ein: ");
                         String inName = scn.nextLine();
                         inName.trim();
-                        // inName.matches("[a-zA-ZäüöÄÖÜ]+[a-zA-ZäöüÄÖÜ\\s]*")
+                        // inName.matches("[a-zA-ZÃ¤Ã¼Ã¶Ã„Ã–Ãœ]+[a-zA-ZÃ¤Ã¶Ã¼Ã„Ã–Ãœ\\s]*")
                         // !inName.matches("[\\s]+")
                         if (!inName.isEmpty() && !inName.matches("[\\s]+")) {
                             server.suchName = inName.trim();
